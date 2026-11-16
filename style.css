@@ -284,3 +284,16 @@ html,body{max-width:100%;overflow-x:clip}img{max-width:100%}dialog{max-height:mi
  .cloud-two{right:0;bottom:17%}
  .welcome-scene:before,.welcome-scene:after{filter:none}
 }
+
+@media(max-width:650px){
+ html,body{background:#d8b9ef}
+ .welcome{background:radial-gradient(ellipse at 50% 12%,#ebd5f9 0%,#d8b9ef 58%,#cba5e7 100%)}
+ .welcome-scene{isolation:isolate}
+ .sprite-plant,.sprite-star{display:block!important;position:absolute;bottom:0;z-index:1;pointer-events:none;background-repeat:no-repeat!important;background-position:center bottom!important;background-size:contain!important;width:clamp(75px,25vw,122px);height:clamp(115px,36vw,178px)}
+ .sprite-plant{left:-4px;background-image:url('./planta-mobile.png')!important}
+ .sprite-star{right:-4px;background-image:url('./estrela-mobile.png')!important}
+ .scene-cloud.cloud-two{display:none}
+ .scene-heart{top:22%;right:1%;width:clamp(45px,13vw,65px);height:clamp(45px,13vw,65px)}
+ .cloud-one{left:0;top:17%}
+ .welcome-scene:before,.welcome-scene:after{display:none}
+}
