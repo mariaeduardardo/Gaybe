@@ -272,3 +272,15 @@ html,body{max-width:100%;overflow-x:clip}img{max-width:100%}dialog{max-height:mi
  .google-button{width:100%;min-height:58px;padding:12px 8px;gap:8px;white-space:normal;font-size:clamp(14px,4vw,18px);line-height:1.2}
  .welcome-privacy{font-size:clamp(11px,3vw,12px);margin-top:16px;padding-top:14px;line-height:1.5}.login-box small{margin-top:8px}
 }
+
+@media(max-width:650px){
+ .scene-cloud,.scene-heart,.panel-crown{clip-path:none!important;filter:none!important}
+ .scene-cloud{background-color:transparent!important;box-shadow:none!important;text-shadow:none!important}
+ .welcome{min-height:100dvh;justify-content:flex-start}
+ .welcome-shell{margin:0 auto}
+ .welcome-scene{overflow:visible}
+ .welcome-scene img{object-fit:contain}
+ .cloud-one{left:0;top:20%}
+ .cloud-two{right:0;bottom:17%}
+ .welcome-scene:before,.welcome-scene:after{filter:none}
+}
