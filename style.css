@@ -371,3 +371,5 @@ html,body{max-width:100%;overflow-x:clip}img{max-width:100%}dialog{max-height:mi
 @media(max-width:360px){.app .hero-copy{max-width:78%}.app .hero-art{width:90px;height:105px}.app .avatar{width:76px;height:76px}.app .hero h2{font-size:19px}.app .hero p{font-size:11px}.app .mobile-nav a span{font-size:8px}}
 
 .profile #profile-avatar{overflow:hidden;flex:none}.profile #profile-avatar img{width:100%;height:100%;object-fit:cover;border-radius:50%;display:block}.icon-btn svg{display:block;margin:auto}.icon-btn svg [hidden]{display:none}
+
+.dashboard-actions{display:flex;justify-content:flex-end;margin:0 0 8px}.dashboard-add{min-height:44px}.dashboard-actions+.section-heading{margin-top:12px}@media(max-width:650px){.app .dashboard-actions{margin:0 0 5px;justify-content:stretch}.app .dashboard-add{width:100%;min-height:46px}.app .dashboard-actions+.section-heading{margin-top:20px}.app header{margin-bottom:20px}}
