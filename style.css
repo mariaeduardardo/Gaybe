@@ -397,3 +397,5 @@ dialog.cash-dialog{width:min(490px,calc(100% - 24px));max-height:min(90dvh,820px
 .cash-dialog .cash-stepper{gap:2px}.cash-dialog .cash-stepper button{flex-basis:29px;width:29px;min-height:36px;height:36px;background:#fffafde8}.cash-dialog .cash-stepper input{height:36px;border:0;background:#ffffff9c}
 .cash-dialog .cash-total{margin:16px 0 4px;font-weight:700}.cash-dialog #cash-result{line-height:1.4;margin-bottom:10px}.cash-dialog .wide{position:sticky;bottom:0;z-index:2;border-radius:20px;min-height:52px;font-size:15px}
 @media(max-width:650px){dialog.cash-dialog{position:fixed;inset:0;margin:0;width:100%;max-width:none;height:100dvh;max-height:100dvh;border-radius:0;padding:20px 16px calc(18px + env(safe-area-inset-bottom));box-sizing:border-box}.cash-dialog .cash-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+
+.nav-link i svg,.stat-icon svg,.row-icon svg,.empty-icon svg,#profile-avatar svg{display:block;width:21px;height:21px}.nav-link i{display:grid;place-items:center}.stat-icon,.row-icon,.empty-icon,#profile-avatar{display:grid;place-items:center}.bottom-banner{gap:12px}.brand-icon{font-family:Nunito,sans-serif;font-weight:900}
