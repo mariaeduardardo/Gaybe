@@ -312,3 +312,10 @@ html,body{max-width:100%;overflow-x:clip}img{max-width:100%}dialog{max-height:mi
 }
 
 @media(max-width:650px){.welcome-scene img{height:100%;width:100%;max-width:100%}.welcome-scene{margin-top:6px}}
+
+/* Mostra a personagem inteira e mantém o subtítulo livre. */
+@media(max-width:650px){
+ .welcome-scene{margin-top:clamp(12px,3vw,18px);height:clamp(300px,82vw,380px);overflow:visible}
+ .welcome-scene img{top:0;bottom:auto;height:100%;width:100%;max-width:100%;object-fit:contain;object-position:center bottom}
+ .login-box{margin-top:0}
+}
