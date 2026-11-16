@@ -252,3 +252,23 @@ html,body{max-width:100%;overflow-x:clip}img{max-width:100%}dialog{max-height:mi
  .login-box small{margin-top:8px;font-size:11px}
 }
 @media(max-width:650px) and (max-height:700px){.welcome-scene{height:clamp(210px,38dvh,270px)}.panel-crown{height:50px}.login-box{padding-top:18px;padding-bottom:18px}.welcome-privacy{margin-top:12px;padding-top:10px}}
+
+@media(max-width:650px){
+ html,body{min-height:100%;background:#d0aeea}
+ .welcome{min-height:100vh;min-height:100svh;display:flex;align-items:center;justify-content:flex-start;padding: max(16px,env(safe-area-inset-top)) 16px max(24px,env(safe-area-inset-bottom));background:radial-gradient(ellipse at 50% 12%,#ead4f8 0%,#d1afea 85%)}
+ .welcome-shell{margin:0 auto;max-width:460px;min-width:0;gap:0}
+ .welcome-panel{display:contents}
+ .panel-crown{order:0;align-self:center;height:clamp(54px,13vw,68px);width:clamp(100px,26vw,130px)}
+ .welcome-panel h1{order:1;margin:0;text-align:center;white-space:normal;font-size:clamp(32px,9.2vw,45px);line-height:1.06}
+ .welcome-panel>p{order:2;text-align:center;margin:5px 0 0;padding:0;font-size:clamp(14px,3.8vw,18px);line-height:1.3}
+ .welcome-scene{order:3;position:relative;height:clamp(255px,72vw,350px);width:100%;overflow:hidden;flex:none}
+ .welcome-scene img{position:absolute;z-index:2;bottom:0;left:50%;transform:translateX(-50%);height:100%;width:100%;max-width:100%;object-fit:contain;object-position:center bottom}
+ .sprite-plant,.sprite-star{display:none!important}
+ .scene-cloud{width:clamp(58px,17vw,78px);height:clamp(58px,17vw,78px);z-index:1}
+ .cloud-one{left:0;top:18%}.cloud-two{right:0;bottom:16%;top:auto}
+ .scene-heart{width:clamp(45px,12vw,65px);height:clamp(45px,12vw,65px);right:0;left:auto;top:36%;z-index:1}
+ .welcome-scene:before,.welcome-scene:after{width:43%;height:22%;bottom:-3%;z-index:3}
+ .login-box{order:4;position:relative;z-index:4;width:100%;max-width:100%;box-sizing:border-box;margin:-2px auto 0;padding:24px clamp(16px,5vw,26px);border-radius:32px;min-height:0}
+ .google-button{width:100%;min-height:58px;padding:12px 8px;gap:8px;white-space:normal;font-size:clamp(14px,4vw,18px);line-height:1.2}
+ .welcome-privacy{font-size:clamp(11px,3vw,12px);margin-top:16px;padding-top:14px;line-height:1.5}.login-box small{margin-top:8px}
+}
