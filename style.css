@@ -319,3 +319,9 @@ html,body{max-width:100%;overflow-x:clip}img{max-width:100%}dialog{max-height:mi
  .welcome-scene img{top:0;bottom:auto;height:100%;width:100%;max-width:100%;object-fit:contain;object-position:center bottom}
  .login-box{margin-top:0}
 }
+
+@media(max-width:650px){
+ html,body{background:#e8cff7}
+ .welcome{min-height:100vh;min-height:100dvh;justify-content:center;background:radial-gradient(ellipse at 50% 0%,#e8cff7 0%,#dfc2f4 58%,#c8a1e5 100%)}
+ .welcome-shell{margin:auto}
+}
