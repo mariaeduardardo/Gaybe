@@ -378,24 +378,26 @@ html,body{max-width:100%;overflow-x:clip}img{max-width:100%}dialog{max-height:mi
 
 .cash-denomination .cash-stepper{display:flex;align-items:center;gap:3px;width:100%}.cash-stepper button{flex:0 0 28px;width:28px;height:34px;border:0;border-radius:9px;background:#fff;color:#714aa1;font-weight:800;font-size:19px}.cash-stepper input{flex:1;width:0;min-width:0;padding:6px 1px;font-size:16px;-moz-appearance:textfield}.cash-stepper input::-webkit-inner-spin-button,.cash-stepper input::-webkit-outer-spin-button{-webkit-appearance:none;margin:0}.cash-denomination.bill{background:linear-gradient(135deg,#d5e9d7,#f3f8e9);border-color:#a6c9a9}.cash-denomination.bill strong{border:1px solid #94b49b;border-radius:5px;padding:3px 6px;color:#3b6650}.cash-denomination.coin strong{border-radius:50%;background:#e8d19a;border:2px solid #bd9f63;color:#725d35;padding:5px}.cash-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
 
-dialog.cash-dialog{width:min(490px,calc(100% - 24px));max-height:min(90dvh,820px);background:linear-gradient(170deg,#f0e0fb,#fffafd 45%,#f3e7fb);padding:20px;color:#34114d;border-radius:26px}
-.cash-dialog .modal-head{margin-bottom:2px}.cash-dialog .modal-head h2{font-size:22px}
-.cash-dialog .pig-hero{height:112px;display:flex;align-items:center;justify-content:center;overflow:hidden}
-.cash-dialog .pig-hero img{height:145px;max-width:100%;object-fit:contain}
-.pig-balance{padding:14px 18px;border:1px solid #fff;border-radius:18px;background:#fff9ff;box-shadow:0 5px 12px #936eb329;margin:3px 0 12px;display:flex;flex-direction:column;gap:2px}
+dialog.cash-dialog{width:min(500px,calc(100% - 24px));max-height:min(92dvh,840px);background:linear-gradient(165deg,#f3e6fc 0%,#fffafd 38%,#f6eaf8 100%);padding:20px;color:#34114d;border:1px solid #ffffffcc;border-radius:30px;box-shadow:0 24px 70px #3c155b4d}
+.cash-dialog::backdrop{background:#32154a73;backdrop-filter:blur(5px)}
+.cash-dialog .modal-head{margin-bottom:8px}.cash-dialog .modal-head h2{font-size:23px;letter-spacing:-.35px}
+.cash-dialog .pig-hero{position:relative;height:174px;display:flex;align-items:center;justify-content:center;overflow:hidden;margin:0 0 -20px;border-radius:24px;background:radial-gradient(circle at 50% 12%,#fff8ff 0 13%,transparent 37%),linear-gradient(145deg,#e8d2f7,#f9eafa 58%,#eadcf8);border:1px solid #ffffffd9;box-shadow:inset 0 1px 0 #fff,0 10px 24px #80539c24}
+.cash-dialog .pig-hero:before,.cash-dialog .pig-hero:after{content:"";position:absolute;border-radius:50%;background:#fff8ff66}.cash-dialog .pig-hero:before{width:92px;height:92px;left:-30px;top:-22px}.cash-dialog .pig-hero:after{width:58px;height:58px;right:12px;bottom:8px}
+.cash-dialog .pig-hero img{position:relative;z-index:1;width:min(390px,100%);height:164px;max-width:100%;object-fit:contain;object-position:center}
+.pig-balance{position:relative;z-index:2;padding:15px 18px;border:1px solid #fff;border-radius:20px;background:#fffafeea;box-shadow:0 8px 20px #79538e29;margin:0 12px 14px;display:flex;flex-direction:column;gap:2px;backdrop-filter:blur(10px)}
 .pig-balance span{font-size:12px;font-weight:700;color:#755a83}.pig-balance strong{font:900 27px Nunito;color:#43105c}
 .pig-modes{display:flex;background:#ede1f6;border:1px solid #e2d1ef;border-radius:24px;padding:3px;gap:3px}
 .pig-mode{flex:1;border:0;border-radius:20px;min-height:44px;color:#583274;background:transparent;font-weight:700}
 .pig-mode.active{color:#fff;background:linear-gradient(110deg,#a348d1,#7020a3);box-shadow:0 3px 7px #7b40965c}
 .pig-caption{font:800 14px Nunito;text-align:center;margin:16px 0 10px}
-.cash-dialog .cash-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+.cash-dialog .cash-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:9px}
 .cash-dialog .cash-denomination{min-width:0;gap:5px;padding:9px 5px;border:0;border-radius:16px;box-shadow:inset 0 -3px 0 #9471a126}
 .cash-dialog .cash-denomination:nth-child(6n+1){background:#c9efe7}.cash-dialog .cash-denomination:nth-child(6n+2){background:#f8d7e7}.cash-dialog .cash-denomination:nth-child(6n+3){background:#ffebbd}.cash-dialog .cash-denomination:nth-child(6n+4){background:#ead5fb}.cash-dialog .cash-denomination:nth-child(6n+5){background:#cdebf0}.cash-dialog .cash-denomination:nth-child(6n){background:#e1d6fa}
 .cash-dialog .money-art{display:flex;justify-content:center;align-items:center;gap:3px;width:64px;max-width:90%;height:34px;border-radius:5px;background:linear-gradient(135deg,#7bc6be,#b0e6d2);box-shadow:0 3px 5px #73518736;color:#315b68;font-size:15px;font-weight:900;transform:rotate(-4deg)}
 .cash-dialog .money-art span{font-size:10px;letter-spacing:0}.cash-dialog .coin .money-art{width:36px;height:36px;border-radius:50%;background:linear-gradient(145deg,#f1db9b,#c6a552);border:3px double #fff2c3;transform:none;color:#70551b}
 .cash-dialog .cash-denomination strong{background:none;border:0;border-radius:0;padding:0;color:#34114d;font-size:12px}
 .cash-dialog .cash-stepper{gap:2px}.cash-dialog .cash-stepper button{flex-basis:29px;width:29px;min-height:36px;height:36px;background:#fffafde8}.cash-dialog .cash-stepper input{height:36px;border:0;background:#ffffff9c}
-.cash-dialog .cash-total{margin:16px 0 4px;font-weight:700}.cash-dialog #cash-result{line-height:1.4;margin-bottom:10px}.cash-dialog .wide{position:sticky;bottom:0;z-index:2;border-radius:20px;min-height:52px;font-size:15px}
-@media(max-width:650px){dialog.cash-dialog{position:fixed;inset:0;margin:0;width:100%;max-width:none;height:100dvh;max-height:100dvh;border-radius:0;padding:20px 16px calc(18px + env(safe-area-inset-bottom));box-sizing:border-box}.cash-dialog .cash-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+.cash-dialog .cash-total{margin:16px 0 4px;font-weight:700}.cash-dialog #cash-result{line-height:1.4;margin-bottom:10px}.cash-dialog .wide{position:relative;bottom:auto;z-index:2;border-radius:20px;min-height:54px;font-size:15px;margin-top:12px;box-shadow:0 10px 24px #71369b42}
+@media(max-width:650px){dialog.cash-dialog{position:fixed;inset:0;margin:0;width:100%;max-width:none;height:100dvh;max-height:100dvh;border-radius:0;padding:18px 16px calc(24px + env(safe-area-inset-bottom));box-sizing:border-box}.cash-dialog .pig-hero{height:168px}.cash-dialog .pig-hero img{height:158px}.cash-dialog .cash-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}.cash-dialog .cash-denomination{padding:9px 5px}.cash-dialog .money-art{height:34px}.cash-dialog .cash-total{margin-top:18px}}
 
 .nav-link i svg,.stat-icon svg,.row-icon svg,.empty-icon svg,#profile-avatar svg{display:block;width:21px;height:21px}.nav-link i{display:grid;place-items:center}.stat-icon,.row-icon,.empty-icon,#profile-avatar{display:grid;place-items:center}.bottom-banner{gap:12px}.brand-icon{font-family:Nunito,sans-serif;font-weight:900}
