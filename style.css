@@ -297,3 +297,16 @@ html,body{max-width:100%;overflow-x:clip}img{max-width:100%}dialog{max-height:mi
  .cloud-one{left:0;top:17%}
  .welcome-scene:before,.welcome-scene:after{display:none}
 }
+
+@media(max-width:650px){
+ .welcome{background:radial-gradient(ellipse at 53% 21%,#ecd6fa 0%,#dfc2f4 54%,#c8a1e5 100%)}
+ .panel-crown{height:clamp(55px,15vw,76px);width:clamp(110px,30vw,150px)}
+ .welcome-panel h1{font-size:clamp(35px,9.6vw,50px)}
+ .welcome-scene{height:clamp(280px,78vw,390px)}
+ .welcome-scene img{height:105%;width:105%;max-width:none}
+ .scene-heart{background-image:url('./balao-mobile.png')!important;background-size:contain!important;top:15%;right:0;width:clamp(60px,20vw,92px);height:clamp(60px,20vw,92px)}
+ .sprite-plant,.sprite-star{height:clamp(130px,40vw,190px);width:clamp(85px,27vw,128px)}
+ .sprite-star{background-image:url('./estrela-ref-mobile.png')!important}
+ .cloud-one{width:clamp(70px,22vw,105px);height:clamp(70px,22vw,105px);top:9%;left:-3%}
+ .login-box{background:linear-gradient(160deg,#fff3f2,#f5e2e7);box-shadow:0 14px 22px #805a9759,inset 0 4px 6px #fff}
+}
