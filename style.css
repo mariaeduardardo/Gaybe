@@ -310,3 +310,5 @@ html,body{max-width:100%;overflow-x:clip}img{max-width:100%}dialog{max-height:mi
  .cloud-one{width:clamp(70px,22vw,105px);height:clamp(70px,22vw,105px);top:9%;left:-3%}
  .login-box{background:linear-gradient(160deg,#fff3f2,#f5e2e7);box-shadow:0 14px 22px #805a9759,inset 0 4px 6px #fff}
 }
+
+@media(max-width:650px){.welcome-scene img{height:100%;width:100%;max-width:100%}.welcome-scene{margin-top:6px}}
