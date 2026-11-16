@@ -192,3 +192,10 @@ html,body{max-width:100%;overflow-x:clip}img{max-width:100%}dialog{max-height:mi
   .scene-cloud{width:clamp(76px,8vw,125px);height:clamp(58px,8vh,82px)}
   .scene-heart{width:clamp(72px,7.5vw,115px);height:clamp(68px,9vh,90px)}
 }
+
+@media (min-width:651px){
+  .login-box{width:88%;margin-left:auto;margin-right:auto}
+  .cloud-one{width:clamp(92px,9vw,138px);height:clamp(70px,9vh,96px)}
+  .cloud-two{width:clamp(78px,7.5vw,112px);height:clamp(58px,7.5vh,82px)}
+  .scene-heart{width:clamp(54px,5vw,80px);height:clamp(54px,7vh,76px)}
+}
