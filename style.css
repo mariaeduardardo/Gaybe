@@ -228,3 +228,10 @@ html,body{max-width:100%;overflow-x:clip}img{max-width:100%}dialog{max-height:mi
 }
 .welcome-scene:before{left:-7%}
 .welcome-scene:after{right:-7%;transform:scaleX(-1)}
+
+/* Entrada exclusiva com Google */
+.login-box{display:flex;flex-direction:column;align-items:center;justify-content:center}
+.google-button{width:100%;max-width:540px}
+.welcome-error:empty{display:none}
+@media(min-width:651px){.welcome-panel>p{margin-bottom:clamp(18px,4vh,38px)}.google-button{margin-top:0}.login-box{max-width:540px}.welcome-privacy{display:block;border-top:0;margin-top:22px;padding:0}.login-box small{display:block;margin-top:12px}}
+@media(max-width:650px){.login-box{padding:32px 7%;min-height:0}.google-button{margin-top:0}.welcome-privacy{margin-top:22px;padding-top:16px}.login-box small{margin-top:10px}}
