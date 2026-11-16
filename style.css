@@ -24,3 +24,7 @@ html,body{max-width:100%;overflow-x:clip}img{max-width:100%}dialog{max-height:mi
 .sprite-crown{width:140px;height:120px}.scene-cloud{width:100px;height:150px}.scene-heart{width:110px;height:160px}.sprite-plant,.sprite-star{height:180px}
 @media(max-width:650px){.panel-crown{width:110px;height:90px}.welcome-scene img{height:100%;width:100%}.scene-cloud{width:85px;height:130px}.scene-heart{width:90px;height:135px}.sprite-plant,.sprite-star{height:180px}}
 @media(min-width:651px){.welcome-shell{min-height:0;height:min(720px,calc(100dvh - 70px))}.welcome-scene img{height:82%;width:90%;object-fit:contain}.scene-crown{top:0}.welcome-panel{padding-top:10px;padding-bottom:10px}.panel-crown{height:100px}.welcome-panel>p{margin:8px 0 12px}.login-field{margin:10px 0}.forgot{margin:8px 4px 10px auto}.signup{margin-top:14px;padding-top:12px}.welcome-privacy,.login-box small{display:none}}
+
+/* Ajuste dos recortes para não mostrar fragmentos das ilustrações vizinhas */
+.scene-cloud,.scene-heart,.sprite-crown{overflow:hidden;clip-path:inset(0 12% 0 12%)}
+@media(max-width:650px){.welcome{padding-top:8px}.panel-crown{height:75px}.welcome-scene{height:clamp(260px,72vw,450px)}.welcome-scene img{height:100%;width:100%}.login-box{padding-top:25px}.forgot{margin-top:8px}}
