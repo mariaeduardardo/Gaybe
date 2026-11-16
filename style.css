@@ -215,3 +215,16 @@ html,body{max-width:100%;overflow-x:clip}img{max-width:100%}dialog{max-height:mi
   .google-g{width:34px!important;height:34px!important}
   .welcome-scene:before,.welcome-scene:after{height:20%;bottom:-4%}
 }
+
+.welcome-scene:before,.welcome-scene:after{
+  width:56%;
+  height:28%;
+  bottom:-8%;
+  background-image:url('./nuvem.png')!important;
+  background-size:contain!important;
+  background-repeat:no-repeat!important;
+  background-position:center bottom!important;
+  filter:drop-shadow(0 -4px 8px rgba(114,70,150,.12));
+}
+.welcome-scene:before{left:-7%}
+.welcome-scene:after{right:-7%;transform:scaleX(-1)}
