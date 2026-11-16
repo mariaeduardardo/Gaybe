@@ -199,3 +199,19 @@ html,body{max-width:100%;overflow-x:clip}img{max-width:100%}dialog{max-height:mi
   .cloud-two{width:clamp(78px,7.5vw,112px);height:clamp(58px,7.5vh,82px)}
   .scene-heart{width:clamp(54px,5vw,80px);height:clamp(54px,7vh,76px)}
 }
+
+.google-g{display:inline-grid!important;place-items:center!important;width:clamp(30px,4.5vh,44px)!important;height:clamp(30px,4.5vh,44px)!important;margin-right:clamp(10px,1.5vw,18px)!important;background:none!important;border-radius:0!important;flex:0 0 auto}
+.google-g svg{display:block;width:100%;height:100%}
+.google-button{display:flex;align-items:center;justify-content:center}
+.welcome-scene:before,.welcome-scene:after{content:"";position:absolute;bottom:-5%;width:58%;height:24%;z-index:2;pointer-events:none;filter:drop-shadow(0 -4px 8px rgba(114,70,150,.12));background:radial-gradient(ellipse at 18% 62%,#f8eafa 0 25%,transparent 26%),radial-gradient(ellipse at 48% 42%,#fff5fb 0 35%,transparent 36%),radial-gradient(ellipse at 80% 64%,#ead8f5 0 30%,transparent 31%)}
+.welcome-scene:before{left:-9%}
+.welcome-scene:after{right:-9%;transform:scaleX(-1)}
+.welcome-scene img{z-index:1}
+@media (min-width:651px){
+  .cloud-one{left:clamp(18px,2vw,34px);top:clamp(55px,9vh,85px)}
+  .cloud-two{right:clamp(2px,.7vw,10px);bottom:31%;width:clamp(82px,8vw,120px);height:clamp(62px,8vh,88px)}
+}
+@media (max-width:650px){
+  .google-g{width:34px!important;height:34px!important}
+  .welcome-scene:before,.welcome-scene:after{height:20%;bottom:-4%}
+}
