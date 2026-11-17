@@ -252,8 +252,7 @@ function render() {
           )
     }</div></div><div class="bottom-banner"><div><strong>Seu futuro começa com pequenos passos.</strong><p>Estou aqui para ajudar você a cuidar do que importa.</p></div><button class="secondary" onclick="location.hash='gaybe'">Conheça a Gaybe →</button></div>`;
   }
-  if (page === "movimentacoes")
-    html = `${section("Seus lançamentos", "Entradas e saídas que você registrou.", '<button class="primary" data-new="transaction">＋ Adicionar</button>')}<div class="card">${data.transactions.length ? data.transactions.map(row).join("") : empty("⇄", "Nenhum lançamento ainda", "Adicione uma entrada ou saída para começar.")}</div>`;
+  if (page === "movimentacoes") html = movementsView();
   if (page === "contas")
     html = `${section("Contas e dinheiro", "Os saldos incluem o valor inicial e os lançamentos vinculados.", '<button class="primary" data-new="account">＋ Nova conta</button>')}<div class="card">${
       data.accounts.length
@@ -278,7 +277,30 @@ function render() {
   $("#content").innerHTML = html;
   bind();
 }
+
+let movementsMonth = "", movementsCategory = "";
+function movementsView() {
+  const month = movementsMonth || today().slice(0,7);
+  const current = data.transactions.filter(t => typeof t.date === "string" && t.date.startsWith(month));
+  const income = current.filter(t => t.type === "income").reduce((n,t)=>n+Number(t.amount_cents||0),0);
+  const expense = current.filter(t => t.type === "expense").reduce((n,t)=>n+Number(t.amount_cents||0),0);
+  const sums = new Map();
+  current.filter(t => t.type === "expense").forEach(t => {const name=(t.category||"Sem categoria").trim()||"Sem categoria";sums.set(name,(sums.get(name)||0)+Number(t.amount_cents||0));});
+  const cats=[...sums].sort((a,b)=>b[1]-a[1]);
+  const colors=["#ad87e6","#f49dbd","#f4c872","#88cfb7","#8fb9e4","#c8a4cf"];
+  let offset=0;
+  const stops=cats.map(([name,value],i)=>{const from=offset;offset+=expense?value/expense*100:0;return colors[i%colors.length]+" "+from+"% "+offset+"%"}).join(",");
+  const visible=movementsCategory?current.filter(t=>(t.category||"Sem categoria").trim()===movementsCategory):current;
+  const ordered=[...visible].sort((a,b)=>b.date.localeCompare(a.date));
+  const chart=expense>0&&!hidden?'<div class="mov-donut" role="img" aria-label="Distribuição dos gastos por categoria" style="background:conic-gradient('+stops+')"><div><strong>'+money(expense)+'</strong><small>Total de saídas</small></div></div>':'<div class="mov-donut empty-chart"><div><strong>'+money(0)+'</strong><small>'+(hidden?'Valores ocultos':'Nenhuma saída')+'</small></div></div>';
+  const legend=cats.length?cats.map(([name,value],i)=>'<button type="button" class="mov-legend-item" data-mov-category="'+esc(name)+'" aria-pressed="'+(movementsCategory===name)+'"><i style="background:'+colors[i%colors.length]+'"></i><span>'+esc(name)+'</span><b>'+(hidden?'•••':Math.round(value/expense*100)+'%')+'</b></button>').join(""):'<p class="hint">Quando você registrar saídas, elas aparecerão aqui por categoria.</p>';
+  return '<div class="mov-page"><div class="mov-heading"><div><h2>Seus movimentos</h2><p>Veja suas entradas e saídas e entenda seus gastos.</p></div><button class="primary" data-new="transaction">＋ Adicionar movimento</button></div><div class="mov-month"><label for="mov-month">Mês</label><input type="month" id="mov-month" value="'+esc(month)+'"></div><div class="mov-summary"><div><span>'+uiIcon("entrada")+' Entradas</span><strong>'+money(income)+'</strong></div><div><span>'+uiIcon("saida")+' Saídas</span><strong>'+money(expense)+'</strong></div></div><section class="mov-chart-card"><div class="mov-chart-title"><h3>Gastos por categoria</h3><p>Suas saídas neste mês</p></div><div class="mov-chart-content">'+chart+'<div class="mov-legend">'+legend+'</div></div></section>'+(cats.length?'<div class="mov-category-cards">'+cats.slice(0,3).map(([name,value],i)=>'<button type="button" data-mov-category="'+esc(name)+'" aria-pressed="'+(movementsCategory===name)+'" class="mov-category"><span class="mov-category-icon" style="color:'+colors[i%colors.length]+'">'+uiIcon("contas")+'</span><strong>'+esc(name)+'</strong><b>'+money(value)+'</b></button>').join("")+'</div>':'')+'<div class="mov-list-head"><h3>Movimentos recentes</h3>'+(movementsCategory?'<button class="subtle mov-clear" type="button" id="mov-clear">Limpar filtro</button>':'')+'</div>'+(movementsCategory?'<p class="hint mov-filter-label">Categoria: '+esc(movementsCategory)+'</p>':'')+'<div class="card mov-list">'+(ordered.length?ordered.map(row).join(""):empty("⇄","Nenhum movimento neste mês",movementsCategory?"Nenhum registro nesta categoria.":"Seus lançamentos aparecerão aqui."))+'</div><p class="hint mov-note">Os movimentos exibem apenas valores registrados no Gaybe. A importação bancária automática ainda não está disponível.</p></div>';
+}
+
 function bind() {
+  if ($("#mov-month")) $("#mov-month").onchange = e => { movementsMonth=e.target.value || today().slice(0,7); movementsCategory=""; render(); };
+  document.querySelectorAll("[data-mov-category]").forEach(b => b.onclick=()=>{movementsCategory=movementsCategory===b.dataset.movCategory?"":b.dataset.movCategory;render();});
+  if ($("#mov-clear")) $("#mov-clear").onclick=()=>{movementsCategory="";render();};
   document
     .querySelectorAll("[data-new]")
     .forEach((b) => (b.onclick = () => openForm(b.dataset.new)));
